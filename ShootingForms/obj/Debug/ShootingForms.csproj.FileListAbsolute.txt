@@ -1,0 +1,10 @@
+C:\Users\Dmitrii\source\repos\ShootingForms\ShootingForms\bin\Debug\ShootingForms.exe.config
+C:\Users\Dmitrii\source\repos\ShootingForms\ShootingForms\bin\Debug\ShootingForms.exe
+C:\Users\Dmitrii\source\repos\ShootingForms\ShootingForms\bin\Debug\ShootingForms.pdb
+C:\Users\Dmitrii\source\repos\ShootingForms\ShootingForms\obj\Debug\ShootingForms.Form1.resources
+C:\Users\Dmitrii\source\repos\ShootingForms\ShootingForms\obj\Debug\ShootingForms.Properties.Resources.resources
+C:\Users\Dmitrii\source\repos\ShootingForms\ShootingForms\obj\Debug\ShootingForms.Resource1.resources
+C:\Users\Dmitrii\source\repos\ShootingForms\ShootingForms\obj\Debug\ShootingForms.csproj.GenerateResource.cache
+C:\Users\Dmitrii\source\repos\ShootingForms\ShootingForms\obj\Debug\ShootingForms.exe
+C:\Users\Dmitrii\source\repos\ShootingForms\ShootingForms\obj\Debug\ShootingForms.pdb
+C:\Users\Dmitrii\source\repos\ShootingForms\ShootingForms\obj\Debug\ShootingForms.csprojAssemblyReference.cache
