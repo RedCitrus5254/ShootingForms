@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.UpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.EnemyTimer = new System.Windows.Forms.Timer(this.components);
             this.scoreLabel = new System.Windows.Forms.Label();
             this.scoreCountLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // timer1
+            // UpdateTimer
             // 
-            this.timer1.Interval = 25;
-            this.timer1.Tick += new System.EventHandler(this.UpdateForm);
+            this.UpdateTimer.Interval = 25;
+            this.UpdateTimer.Tick += new System.EventHandler(this.UpdateForm);
             // 
             // EnemyTimer
             // 
@@ -80,7 +80,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer UpdateTimer;
         private System.Windows.Forms.Timer EnemyTimer;
         private System.Windows.Forms.Label scoreLabel;
         private System.Windows.Forms.Label scoreCountLabel;

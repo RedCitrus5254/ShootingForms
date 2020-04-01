@@ -16,53 +16,53 @@ namespace ShootingForms
     {
         private Random random = new Random();
 
-        private List<Bullet> boolets = new List<Bullet>(10);
+        private List<Bullet> bullets = new List<Bullet>(10);
         private List<Enemy> enemyButtons = new List<Enemy>();
 
-        private Point booletStartPoint;
+        private Point bulletStartPoint;
 
         int score = 0;
         public Form1()
         {
             
             InitializeComponent();
-            booletStartPoint = new Point(this.Width / 2, this.Height / 2);
+            bulletStartPoint = new Point(this.Width / 2, this.Height / 2);
             CreatePlayer();
             this.MouseClick += Shooting;
             this.KeyDown += Moving;
             //panel1.MouseClick += Shooting;
-            timer1.Start();
+            UpdateTimer.Start();
             EnemyTimer.Start();
         }
 
         private void CreatePlayer()
         {
-            PictureBox b = new PictureBox();
-            b.Width = 30;
-            b.Height = 30;
-            b.Image = Resource1._1_dots_removebg_preview;
-            b.Enabled = false;
-            b.SizeMode = PictureBoxSizeMode.StretchImage;
-            b.Location = booletStartPoint;
-            this.Controls.Add(b);
+            PictureBox player = new PictureBox();
+            player.Width = 30;
+            player.Height = 30;
+            player.Image = Resource1._1_dots_removebg_preview;
+            player.Enabled = false;
+            player.SizeMode = PictureBoxSizeMode.StretchImage;
+            player.Location = bulletStartPoint;
+            this.Controls.Add(player);
             //boolets.Add(b);
-            b.Show();
+            player.Show();
         }
         private void Moving(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
                 case Keys.W:
-                    booletStartPoint.Y -= 2;
+                    bulletStartPoint.Y -= 2;
                     break;
                 case Keys.S:
-                    booletStartPoint.Y += 2;
+                    bulletStartPoint.Y += 2;
                     break;
                 case Keys.A:
-                    booletStartPoint.X -= 2;
+                    bulletStartPoint.X -= 2;
                     break;
                 case Keys.D:
-                    booletStartPoint.X += 2;
+                    bulletStartPoint.X += 2;
                     break;
             }
         }
@@ -72,11 +72,11 @@ namespace ShootingForms
             {
                 enemyButtons[i].ChangeLocation();
             }
-            for (int i = 0; i < boolets.Count; i++)
+            for (int i = 0; i < bullets.Count; i++)
             {
-                boolets[i].ChangeLocation();
+                bullets[i].ChangeLocation();
 
-                IDisposable control = this.GetChildAtPoint(boolets[i].Location);
+                IDisposable control = this.GetChildAtPoint(bullets[i].Location);
                 if (control != null && control.GetType() == typeof(Enemy))
                 {
                     control.Dispose();
@@ -88,22 +88,22 @@ namespace ShootingForms
 
         private void Shooting(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            Bullet b = new Bullet(e.X, e.Y, booletStartPoint);
+            Bullet b = new Bullet(e.X, e.Y, bulletStartPoint);
             b.Width = 10;
             b.Height = 10;
             b.Image = Resource1._1_dot;
             b.Enabled = false;
             b.SizeMode = PictureBoxSizeMode.StretchImage;
-            b.Location = booletStartPoint;
+            b.Location = bulletStartPoint;
             this.Controls.Add(b);
-            boolets.Add(b);
+            bullets.Add(b);
             b.Show();
         }
 
         private void SpawnEnemy(object sender, EventArgs e)
         {
             Point startPoint = RandomEnemyLocation();
-            Enemy enemy = new Enemy(booletStartPoint.X, booletStartPoint.Y, startPoint);
+            Enemy enemy = new Enemy(bulletStartPoint.X, bulletStartPoint.Y, startPoint);
 
             enemy.Location = startPoint;
             enemy.Name = "button";
